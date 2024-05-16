@@ -52,6 +52,8 @@ function ResultDisplay() {
   const department = searchParams.get("department");
   const semester = searchParams.get("semester");
   const name=searchParams.get("name");
+  const bank_account_number=searchParams.get("bank_account_number");
+  console.log("ACC NO",bank_account_number);
   const type=searchParams.get("type");
   const results = JSON.parse(searchParams.get("results"));
   console.log("Results:", results);
@@ -447,10 +449,10 @@ else if(panelType==="Tabulation"){
 
   return (
     <div className="container mt-4 light">
-      <TitleContent />
+      <TitleContent bank_account_number={bank_account_number} />
       <div className="result-display text-center" >
     
-          <p  style={{ fontSize: '25px', textAlign: 'left' }}>পরীক্ষকের নাম :  <strong style={{ textTransform: 'uppercase' }}>{name}</strong><br/> </p>  
+          <p  style={{ fontSize: '25px', textAlign: 'left' }}>পরীক্ষকের নাম :  <strong style={{ textTransform: 'uppercase' }}>{name}</strong><br/> ACC NO{bank_account_number}</p>  
           <p style={{ fontSize: '25px', textAlign: 'left', }}> <strong>{findCommitteeSession(committees, semester)} </strong> সনের  <strong >{ sem[semester]}</strong> {formatType[type]}  পরীক্ষা সংক্রান্ত কাজের বিস্তারিত বিবরণ</p>
         
           <div className="result-table">

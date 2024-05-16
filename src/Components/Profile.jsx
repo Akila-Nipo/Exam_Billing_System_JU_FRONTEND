@@ -11,7 +11,7 @@ const Profile = () => {
     const [teacher, setTeacher] = useState(null);
   
     useEffect(() => {
-      fetch('/faculty.json')
+      fetch('http://localhost:8000/day4app/api/faculty/')
         .then((res) => res.json())
         .then((data) => {
           
@@ -39,7 +39,7 @@ const Profile = () => {
     
       )}
      
-     {teacher !== null && <InputForm name={teacher.name}></InputForm>}
+     {teacher !== null && <InputForm name={teacher.name} bankAccountNumber={teacher.bank_account_number}></InputForm>}
       <Footer></Footer>
         </div>
     );

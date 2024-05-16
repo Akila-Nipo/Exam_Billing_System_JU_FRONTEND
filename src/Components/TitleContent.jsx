@@ -2,7 +2,7 @@ import React from "react";
 import ImageComponent from "./heading";
 // import Seal from "./Seal";
 import './TitleContent.css';
-function TitleContent() {
+function TitleContent({ bank_account_number }) {
    
  
 
@@ -25,7 +25,7 @@ function TitleContent() {
               <td style={{ padding: '10px', margin: '10px' }}><strong style={{ fontSize: '20px'}}>Sl No. ...............</strong></td>
             </tr>
             <tr>
-              <td style={{ padding: '10px', margin: '10px' }}><strong style={{ fontSize: '20px'}}>Bank A/C No. ......................</strong></td>
+              <td style={{ padding: '10px', margin: '10px'}}><strong style={{ fontSize: '24px'}}>Bank A/C No. </strong><span style={{ textDecoration: 'underline dotted' ,fontSize: '29px' }}>{bank_account_number}</span></td>
             </tr>
             </tbody>
           </table>

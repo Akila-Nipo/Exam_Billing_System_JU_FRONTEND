@@ -10,6 +10,7 @@ function InputForm(props) {
   const [selectedDepartment, setSelectedDepartment] = useState("Computer Science and Engineering");
   const [selectedType, setSelectedType] = useState("Hons");
   const [selectName,setSelectedName]=useState(props.name);
+  const [selectBankAccNo,setSelectedBankAccNo]=useState(props.bankAccountNumber);
   const [inputData, setInputData] = useState([]);
   const [selectedCourses, setSelectedCourses] = useState([]); 
   const [selectedCoursesBySemester, setSelectedCoursesBySemester] = useState({});
@@ -219,6 +220,7 @@ function InputForm(props) {
     const department = encodeURIComponent(selectedDepartment);
     const semester = encodeURIComponent(selectedSemester);
     const name=encodeURIComponent(selectName);
+    const bank_account_number=encodeURIComponent(selectBankAccNo);
     const type=encodeURIComponent(selectedType);
     console.log("Panel Type:", panelType);
   
@@ -230,7 +232,7 @@ function InputForm(props) {
   };
 
   // Send a POST request to save data to the Django backend
-  axios.post('http://localhost:8000/day5app/your-endpoint/', formData)
+  axios.post('http://localhost:8000/day4app/your-endpoint/', formData)
     .then(response => {
       // Handle success
       console.log("Data saved successfully:", response.data);
@@ -240,7 +242,7 @@ function InputForm(props) {
       // Handle error
       console.error("Error saving data:", error);
     });
-    navigate(`/result?results=${JSON.stringify(results)}&panelType=${inputData[0].panelType}&department=${department}&semester=${semester}&name=${name}&type=${type}`);
+    navigate(`/result?results=${JSON.stringify(results)}&panelType=${inputData[0].panelType}&department=${department}&semester=${semester}&name=${name}&type=${type}&bank_account_number=${props.bankAccountNumber}`);
   };
 
   const courseOptions = {
@@ -315,7 +317,7 @@ function InputForm(props) {
   
   return (
     <div className="container mt-4 ">
-    
+     
       <div className="form-group select-container">
         <label htmlFor="selectedDepartment">Select Department:</label>
         <select
@@ -329,8 +331,10 @@ function InputForm(props) {
           <option value="Computer Science and Engineering">Computer Science and Engineering</option>
         </select>
       </div>
+      
 
-      <div className="form-group select-container">
+      <div style={{ display: 'flex', gap: '20px' }}>
+      <div className="form-group select-container" style={{ flex: 1 }}>
         <label htmlFor="selectName">Name:</label>
         <select
           className="form-control"
@@ -343,6 +347,33 @@ function InputForm(props) {
           <option value={props.name}>{props.name}</option>
         </select>
       </div>
+      <div className="form-group select-container" style={{ flex: 1 }}>
+        <label htmlFor="selectName">Bank A/C No:</label>
+        <select
+          className="form-control"
+          aria-label="Disabled select example" disabled
+          style={{height:'50px',fontSize:'20px'}}
+          id="selectedNo"
+          value={selectBankAccNo}
+          onChange={(e) => setSelectedBankAccNo(e.target.value)}
+        >
+          <option value={props.bankAccountNumber}>{props.bankAccountNumber}</option>
+        </select>
+      </div>
+       
+      {/* <div className="form-group" style={{ flex: 1 }}>
+        <label htmlFor="bankAccountNumber">Bank Account Number:</label>
+        <input
+          type="text"
+          className="form-control"
+          id="bankAccountNumber"
+          value={props.bankAccountNumber}
+          readOnly
+          style={{ height: '50px', fontSize: '20px' }}
+        />
+      </div> */}
+    </div>
+      
        
       <div className="form-group select-container">
         <label htmlFor="selectedCourseType">Select Type:</label>
