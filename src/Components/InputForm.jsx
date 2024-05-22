@@ -269,15 +269,43 @@ function InputForm(props) {
     "Algorithms-I": "CSE-209",
     "Algorithms-I-Lab": "CSE-210",
     "Electronic Circuits": "CSE-107",
+    "Electronic Circuits LAB":"CSE-108",
     "Numerical Methods": "CSE-205",
+    "Numerical Methods LAB":"CSE-206",
     "Web Design and Programming Laboratory-I":"CSE-312",
     "Technical Writing and Presentations":"CSE-112",
     "Database Systems":"CSE-255",
+    "Computer Graphics":"CSE-303",
+    "Computer Graphics LAB":"CSE-304",
     "Computational Geometry":"CSE-305",
     "Java":"CSE-212",
     "Operating Systems":"CSE-309",
     "Operating Systems Lab":"CSE-310",
-   
+     "Computer Ethics And Cyber law":"CSE-203",
+     "Digital Logic Design":"CSE-253",
+     "Digital Logic Design LAB":"CSE-254",
+     "Database System":"CSE-255",
+     "Database System LAB":"CSE-256",
+     "Algorithms II":"CSE-257",
+     "Algorithms II LAB":"CSE-258",
+     "Data and Telecommunication":"CSE-259",
+     "Data and Telecommunication LAB.":"CSE-260",
+     "Human Computer Interaction":"CSE-353",
+     "Introduction To Bioinformatics":"CSE-355",
+     "Microprocessors":"CSE-357",
+     "Microprocessor And Assembly Language LAB":"CSE-358",
+     "Computer Networks":"CSE-359",
+     "Computer Networks LAB":"CSE-360",
+     "Web Design and Programming Laboratory-II":"CSE-362",
+     "Theory Of Computation And Application":"CSE-401",
+     "Software Engineering And Information System Design":"CSE-403",
+     "Software Engineering And ISD LAB.":"CSE-404",
+     "Digital Image Processing":"CSE-405",
+     "Digital Image Processing LAB":"CSE-406",
+     "Wireless Networks":"CSE-407",
+     "Mobile Application Development LAB":"CSE-410",
+     "Thesis/Project/Report Evaluation":"CSE-440"
+      
   };
 
   const semesterToCoursesMapping = {
@@ -285,6 +313,7 @@ function InputForm(props) {
       "Structured Programming Language",
       "Structured Programming Language-Lab",
       "Electronic Circuits",
+      "Electronic Circuits LAB",
   
     ],
     "1st Year 2nd Semester": [
@@ -299,6 +328,17 @@ function InputForm(props) {
       "Algorithms-I-Lab",
       "Numerical Methods",
       "Java",
+      "Computer Ethics And Cyber law"
+    ],
+    "2nd Year 2nd Semester": [
+      "Digital Logic Design",
+      "Digital Logic Design LAB",
+      "Database System",
+      "Database System LAB",
+      "Algorithms II",
+      "Algorithms II LAB",
+      "Data and Telecommunication",
+      "Data and Telecommunication LAB",
     ],
 
     "3rd Year 1st Semester": [
@@ -306,8 +346,31 @@ function InputForm(props) {
       "Computational Geometry",
       "Operating Systems",
       "Operating Systems Lab",
+      "Computer Graphics",
+      "Computer Graphics LAB",
     ],
-   
+    "3rd Year 2nd Semester": [
+      "Web Design and Programming Laboratory-II",
+      "Introduction to Bioinformatics",
+      "Microprocessors",
+      "Microprocessor And Assembly Language LAB",
+      "Computer Networks",
+      "Computer Networks LAB",
+      "Human Computer Interaction",
+    ],
+    "4th Year 1st Semester": [
+      "Theory Of Computation And Application",
+      "Software Engineering And Information System Design",
+      "Software Engineering And ISD LAB.",
+      "Digital Image Processing",
+      "Digital Image Processing LAB",
+      "Wireless Networks",
+      "Mobile Application Development LAB",
+      "Thesis/Project/Report Evaluation"
+
+    ],
+
+  
   };
   const courseOptionsForSelectedDepartment = courseOptions[selectedDepartment] || [];
   const courseOptionsForSelectedSemester = semesterToCoursesMapping[selectedSemester] || [];
@@ -600,7 +663,7 @@ function InputForm(props) {
   <label>Criteria Of Work :</label>
   <div className="criteriaSelect">
   <div className="column-container">
-  {["Making Question Paper", "Evaluating Answer Scripts", "Question Moderation", "Lab Exam", "Viva Exam", "Tabulation","Stencil"].map((panelType, idx) => (
+  {["Making Question Paper", "Evaluating Answer Scripts", "Question Moderation", "Lab Exam", "Viva Exam", "Tabulation","Stencil","Thesis/Project/Report Evaluation"].map((panelType, idx) => (
     <div key={idx} className="column-item">
       <div className="criteriaSelectCheckbox"style={{display:'flex',flex:'wrap'}}>
         <div className="criteriaCheckbox">
@@ -647,7 +710,7 @@ function InputForm(props) {
   </div>
 ) : null}
 
-{data.panelType.includes("Evaluating Answer Scripts") || data.panelType.includes("Viva Exam") ? (
+{data.panelType.includes("Evaluating Answer Scripts") || data.panelType.includes("Viva Exam") | data.panelType.includes("Thesis/Project/Report Evaluation")? (
   // Render "Number of Students" field for other criteria, if needed
   <div className="form-group select-container">
     <label htmlFor={`numStudents${index}`}>Number of Students:</label>
@@ -660,6 +723,9 @@ function InputForm(props) {
       onChange={(e) => handleInputChange(e, index)}
     >
       <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="5">5</option>
       <option value="10">10</option>
       <option value="20">20</option>
       <option value="30">30</option>
@@ -671,6 +737,12 @@ function InputForm(props) {
       <option value="36">36</option>
       <option value="37">37</option>
       <option value="38">38</option>
+      <option value="40">40</option>
+      <option value="45">45</option>
+      <option value="50">50</option>
+      <option value="55">55</option>
+      <option value="60">60</option>
+      <option value="65">65</option>
     </select>
   </div>
 ) : null}

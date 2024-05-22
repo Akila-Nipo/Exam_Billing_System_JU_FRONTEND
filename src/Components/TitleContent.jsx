@@ -11,9 +11,9 @@ function TitleContent({ bank_account_number }) {
       <div className="logo-and-title-container" style={{marginLeft:'80px'}}>
        < ImageComponent id="logo" style={{width:'20px'}}/>
          <div className="title-content" >
-         <h1 id="heading-content-1" style={{marginLeft:'0px'}}><strong style={{marginLeft:'20px'}}>পরীক্ষা নিয়ন্ত্রকের অফিস<br />জাহাঙ্গীরনগর বিশ্ববিদ্যালয়</strong></h1>
-          <h3 id="heading-content" style={{marginLeft:'140px'}}>সাভার, ঢাকা।</h3>
-          <hr className="line"style={{marginLeft:'140px'}}/>
+         <h1 id="heading-content-1" style={{marginLeft:'0px'}}><strong style={{marginLeft:'0px',fontSize:'30px',textAlign:'justify'}}>পরীক্ষা নিয়ন্ত্রকের অফিস</strong><br /><strong style={{marginLeft:'0px',fontSize:'26px'}}>জাহাঙ্গীরনগর বিশ্ববিদ্যালয়</strong></h1>
+          <h3 id="heading-content" style={{marginLeft:'10px'}}>সাভার, ঢাকা।</h3>
+          <hr className="line"style={{marginLeft:'10px'}}/>
           </div>
           
           <div  style={{marginLeft:'80px'}}>
@@ -25,7 +25,7 @@ function TitleContent({ bank_account_number }) {
               <td style={{ padding: '10px', margin: '10px' }}><strong style={{ fontSize: '20px'}}>Sl No. ...............</strong></td>
             </tr>
             <tr>
-              <td style={{ padding: '10px', margin: '10px'}}><strong style={{ fontSize: '24px'}}>Bank A/C No. </strong><span style={{ textDecoration: 'underline dotted' ,fontSize: '29px' }}>{bank_account_number}</span></td>
+              <td style={{ padding: '10px', margin: '10px'}}><strong style={{ fontSize: '24px'}}>Bank A/C No. </strong><span style={{ textDecoration: 'underline dotted' ,fontSize: '29px',fontWeight:'400' }}>{bank_account_number}</span></td>
             </tr>
             </tbody>
           </table>

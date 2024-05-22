@@ -41,11 +41,18 @@ function ResultDisplay() {
       .catch(error => {
         console.error('Error fetching committees:', error);
       });
+
+      
       
     };
 
     fetchCourses();
+
+
+    
   }, []);
+
+ 
   
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -183,8 +190,14 @@ function ResultDisplay() {
       const committee_chief_name=findCommitteeChief(committees, semester);
       if (name === committee_chief_name ) {
         // Return the corresponding amount
-        totalResult+=2700;
-        return `Tk ${(2700).toLocaleString()}`;
+        // totalResult+=2700;
+        // return `Tk ${(2700).toLocaleString()}`;
+        const matchingRate = rates.find(rate => (rate.name === "Exam Committee Chief_s Remuneration" && rate.category==="Hons"));
+        if (matchingRate) {
+        totalResult += parseFloat(matchingRate.value);
+        console.log("Calculated values:", totalResult);
+        return `Tk ${(matchingRate.value).toLocaleString()}`;
+      }
       }
     }
     }
@@ -443,6 +456,22 @@ else if(panelType==="Tabulation"){
   
 }
 
+else if(panelType==="Thesis/Project/Report Evaluation"){
+  if ((results.type === "Hons")){
+    const matchingRate = rates.find(rate => (rate.name === "Thesis/Project/Report Evaluation"  && rate.category==="Hons"));
+    if (matchingRate) {
+    totalResult += parseFloat(results.numStudents*matchingRate.value);
+    console.log("Calculated values:", totalResult);
+    return `Tk ${(results.numStudents * matchingRate.value).toLocaleString()}`;
+  }
+}
+  
+}
+
+
+
+
+
 }
  
  
@@ -451,8 +480,8 @@ else if(panelType==="Tabulation"){
     <div className="container mt-4 light">
       <TitleContent bank_account_number={bank_account_number} />
       <div className="result-display text-center" >
-    
-          <p  style={{ fontSize: '25px', textAlign: 'left' }}>পরীক্ষকের নাম :  <strong style={{ textTransform: 'uppercase' }}>{name}</strong><br/> ACC NO{bank_account_number}</p>  
+      {/* <br/> ACC NO{bank_account_number} */}
+          <p  style={{ fontSize: '25px', textAlign: 'left' }}>পরীক্ষকের নাম :  <strong style={{ textTransform: 'uppercase' }}>{name}</strong></p>  
           <p style={{ fontSize: '25px', textAlign: 'left', }}> <strong>{findCommitteeSession(committees, semester)} </strong> সনের  <strong >{ sem[semester]}</strong> {formatType[type]}  পরীক্ষা সংক্রান্ত কাজের বিস্তারিত বিবরণ</p>
         
           <div className="result-table">
@@ -676,7 +705,7 @@ else if(panelType==="Tabulation"){
       <td>{Thesis_Project_ReportEvaluation.map(obj => obj.numStudents !== 0 ? obj.numStudents : '--').join(', ')}</td>
       <td>{Thesis_Project_ReportEvaluation.map(obj => obj.daysOfExam !== 0 ? '' : '--')}</td>
       <td>{Thesis_Project_ReportEvaluation.map(obj => obj.numHours !== 0 ? '' : '--')}</td>
-      <td>{Thesis_Project_ReportEvaluation.map(obj => calculateValue('Thesis/Project/Report Evaluation', obj)).join(', ')}</td>
+      <td>{Thesis_Project_ReportEvaluation.map(obj => calculateValue2('Thesis/Project/Report Evaluation', obj)).join(', ')}</td>
     </>
   ) : (
     <>
