@@ -281,7 +281,7 @@ function InputForm(props) {
     "Java":"CSE-212",
     "Operating Systems":"CSE-309",
     "Operating Systems Lab":"CSE-310",
-     "Computer Ethics And Cyber law":"CSE-203",
+     "Computer Ethics And Cyber Law":"CSE-203",
      "Digital Logic Design":"CSE-253",
      "Digital Logic Design LAB":"CSE-254",
      "Database System":"CSE-255",
@@ -291,7 +291,7 @@ function InputForm(props) {
      "Data and Telecommunication":"CSE-259",
      "Data and Telecommunication LAB.":"CSE-260",
      "Human Computer Interaction":"CSE-353",
-     "Introduction To Bioinformatics":"CSE-355",
+     "Introduction to Bioinformatics":"CSE-355",
      "Microprocessors":"CSE-357",
      "Microprocessor And Assembly Language LAB":"CSE-358",
      "Computer Networks":"CSE-359",
@@ -327,8 +327,9 @@ function InputForm(props) {
       "Algorithms-I",
       "Algorithms-I-Lab",
       "Numerical Methods",
+      "Numerical Methods LAB",
       "Java",
-      "Computer Ethics And Cyber law"
+      "Computer Ethics And Cyber Law"
     ],
     "2nd Year 2nd Semester": [
       "Digital Logic Design",

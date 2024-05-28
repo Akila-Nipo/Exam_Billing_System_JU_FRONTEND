@@ -891,7 +891,7 @@ else if(panelType==="Thesis/Project/Report Evaluation"){
         <hr className="section-divider" style={{width:'1500px', marginLeft:'-200px',}}/>
         <p className="declaration-two" style={{ marginLeft:'-150px' }}>প্রফেসর/ড./জনাব    <strong style={{ textTransform: 'uppercase' }}>{name}</strong>   কে <strong>  {totalResult.toLocaleString('bn-BD')} </strong> টাকা মাত্র প্রদান করা যেতে পারে।<br/>সমুদয় টাকা বুঝে পেলাম।</p> 
         <ResultFooter2/>
-        <div>
+        {/* <div>
       <h1>Course Data</h1>
       <ul>
         {courses.map(course => (
@@ -911,7 +911,7 @@ else if(panelType==="Thesis/Project/Report Evaluation"){
         ))}
       </ul>
       
-    </div>
+    </div> */}
         </div>
   );
 }
