@@ -11,7 +11,7 @@ function TitleContent({ bank_account_number }) {
       <div className="logo-and-title-container" style={{marginLeft:'80px'}}>
        < ImageComponent id="logo" style={{width:'20px'}}/>
          <div className="title-content" >
-         <h1 id="heading-content-1" style={{marginLeft:'0px'}}><strong style={{marginLeft:'0px',fontSize:'30px',textAlign:'justify'}}>পরীক্ষা নিয়ন্ত্রকের অফিস</strong><br /><strong style={{marginLeft:'0px',fontSize:'26px'}}>জাহাঙ্গীরনগর বিশ্ববিদ্যালয়</strong></h1>
+         <h1 id="heading-content-1" style={{marginLeft:'0px',textAlign:'center'}}><strong style={{marginLeft:'0px',fontSize:'38px',textAlign:'justify'}}>পরীক্ষা নিয়ন্ত্রকের অফিস</strong><br /><strong style={{marginLeft:'0px',fontSize:'27px'}}>জাহাঙ্গীরনগর বিশ্ববিদ্যালয়</strong></h1>
           <h3 id="heading-content" style={{marginLeft:'10px'}}>সাভার, ঢাকা।</h3>
           <hr className="line"style={{marginLeft:'10px'}}/>
           </div>

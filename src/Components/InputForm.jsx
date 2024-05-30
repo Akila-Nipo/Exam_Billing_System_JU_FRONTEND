@@ -304,7 +304,17 @@ function InputForm(props) {
      "Digital Image Processing LAB":"CSE-406",
      "Wireless Networks":"CSE-407",
      "Mobile Application Development LAB":"CSE-410",
-     "Thesis/Project/Report Evaluation":"CSE-440"
+     "Thesis/Project/Report Evaluation":"CSE-440",
+     "Data Mining And Big Data Analysis":"CSE-451",
+     "Data Mining And Big Data Analysis LAB.":"CSE-452",
+     "Artificial Intelligence":"CSE-453",
+     "Artificial Intelligence LAB.":"CSE-454",
+     "Software Quality Assurance":"CSE-455",
+     "Machine Learning":"CSE-457",
+     "Machine Learning LAB.":"CSE-458",
+     "IoT LAB.":"CSE-60",
+     "Thesis/Project/Report Evaluation":"CSE-440",
+
       
   };
 
@@ -314,13 +324,15 @@ function InputForm(props) {
       "Structured Programming Language-Lab",
       "Electronic Circuits",
       "Electronic Circuits LAB",
+     
   
     ],
     "1st Year 2nd Semester": [
       "Data Structures",
       "Data Structures Lab",
       "Discrete Mathematics",
-      "Technical Writing and Presentations"
+      "Technical Writing and Presentations",
+      
     ],
 
     "2nd Year 1st Semester": [
@@ -329,7 +341,8 @@ function InputForm(props) {
       "Numerical Methods",
       "Numerical Methods LAB",
       "Java",
-      "Computer Ethics And Cyber Law"
+      "Computer Ethics And Cyber Law",
+      
     ],
     "2nd Year 2nd Semester": [
       "Digital Logic Design",
@@ -340,6 +353,7 @@ function InputForm(props) {
       "Algorithms II LAB",
       "Data and Telecommunication",
       "Data and Telecommunication LAB",
+      
     ],
 
     "3rd Year 1st Semester": [
@@ -349,6 +363,7 @@ function InputForm(props) {
       "Operating Systems Lab",
       "Computer Graphics",
       "Computer Graphics LAB",
+      
     ],
     "3rd Year 2nd Semester": [
       "Web Design and Programming Laboratory-II",
@@ -358,6 +373,7 @@ function InputForm(props) {
       "Computer Networks",
       "Computer Networks LAB",
       "Human Computer Interaction",
+      
     ],
     "4th Year 1st Semester": [
       "Theory Of Computation And Application",
@@ -367,9 +383,24 @@ function InputForm(props) {
       "Digital Image Processing LAB",
       "Wireless Networks",
       "Mobile Application Development LAB",
-      "Thesis/Project/Report Evaluation"
+      "Thesis/Project/Report Evaluation",
+      
 
     ],
+    "4th Year 2nd Semester": [
+      "Data Mining And Big Data Analysis",
+      "Data Mining And Big Data Analysis LAB.",
+      "Artificial Intelligence",
+      "Artificial Intelligence LAB.",
+      "Software Quality Assurance",
+      "Machine Learning",
+      "Machine Learning LAB.",
+      "IoT LAB",
+      "Thesis/Project/Report Evaluation",
+     
+
+    ],
+
 
   
   };
@@ -536,7 +567,7 @@ function InputForm(props) {
 
 
 <div className="form-group select-container" style={{marginTop:'30px',letterSpacing: '1px'}}>
-  <label htmlFor="courseSelect">Select Additional Courses<i style={{color: 'blue'}}> (In case you were the EXTERNAL/INVIGILATOR)</i>:</label>
+  <label htmlFor="courseSelect">Select Additional Courses<i style={{color: 'blue'}}> (In case you were the EXTERNAL/MODERATOR)</i>:</label>
   <div className="course-checkboxes">
     {courseOptionsForSelectedSemester
       .filter(course => !fetchedCourses.includes(course)) // Filter out already selected courses
@@ -561,6 +592,31 @@ function InputForm(props) {
       ))}
   </div>
   </div>
+  <div className="form-group select-container" style={{ marginTop: '30px', letterSpacing: '1px' }}>
+  <label htmlFor="courseSelect">
+    Select<i style={{ color: 'blue' }}> (In case you were the TABULATOR)</i>:
+  </label>
+  <div className="course-checkboxes">
+    <label className="checkbox-label" style={{ backgroundColor: '#dfedea', boxShadow: '10px 8px 10px rgba(0, 0, 0, 0.4)', margin: '17px', padding: '14px', width: '290px', height: '120px', display: 'inline-block', textAlign: 'start' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignContent: 'center' }}>
+        <div> 
+          <input
+            type="checkbox"
+            name="selectedCourse"
+            value="Tabulation"
+            onChange={handleCourseChange}
+            checked={selectedCourses.includes("Tabulation")}
+            className="checkbox-input"
+            style={{ margin: '7px', width: '25px', height: '20px' }}
+          />
+        </div>
+        <div style={{ marginTop: '2px', fontSize: '20px', textDecoration: 'none' }}>
+          Tabulation
+        </div>
+      </div>
+    </label>
+  </div>
+</div>
  
  {/* <div className="form-group select-container" style={{marginTop:'30px'}}>
   <label htmlFor="RoutinecourseSelect">Select Your Routine Courses:</label>
@@ -664,7 +720,7 @@ function InputForm(props) {
   <label>Criteria Of Work :</label>
   <div className="criteriaSelect">
   <div className="column-container">
-  {["Making Question Paper", "Evaluating Answer Scripts", "Question Moderation", "Lab Exam", "Viva Exam", "Tabulation","Stencil","Thesis/Project/Report Evaluation"].map((panelType, idx) => (
+  {["Making Question Paper", "Evaluating Answer Scripts", "Question Moderation", "Lab Exam", "Viva Exam", "Stencil","Thesis/Project/Report Evaluation","Tabulation"].map((panelType, idx) => (
     <div key={idx} className="column-item">
       <div className="criteriaSelectCheckbox"style={{display:'flex',flex:'wrap'}}>
         <div className="criteriaCheckbox">
@@ -744,6 +800,10 @@ function InputForm(props) {
       <option value="55">55</option>
       <option value="60">60</option>
       <option value="65">65</option>
+      <option value="70">70</option>
+      <option value="100">100</option>
+      <option value="150">150</option>
+      <option value="200">200</option>
     </select>
   </div>
 ) : null}

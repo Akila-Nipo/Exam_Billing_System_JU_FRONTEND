@@ -195,7 +195,7 @@ function ResultDisplay() {
         const matchingRate = rates.find(rate => (rate.name === "Exam Committee Chief_s Remuneration" && rate.category==="Hons"));
         if (matchingRate) {
         totalResult += parseFloat(matchingRate.value);
-        console.log("Calculated values:", totalResult);
+        console.log("Calculated values :", totalResult);
         return `Tk ${(matchingRate.value).toLocaleString()}`;
       }
       }
@@ -809,7 +809,7 @@ else if(panelType==="Thesis/Project/Report Evaluation"){
   <td>কমিটির সভাপতির পারিতোষিক</td>
   {ExamCommitteeChiefRemuneration.length > 0 ? (
     <>
-      <td></td>
+      <td>{dept[department]}</td>
       <td>{ExamCommitteeChiefRemuneration.map(obj => obj.courseName).join(', ')}</td>
       <td>{ExamCommitteeChiefRemuneration.map(obj => obj.courseCode).join(', ')}</td>
       <td>{ExamCommitteeChiefRemuneration.map(obj => obj.stencilPages !== 0 ? '' : '--')}</td>
@@ -821,7 +821,7 @@ else if(panelType==="Thesis/Project/Report Evaluation"){
   ) : (
     <>
      
-     <td>{findCommitteeAmount() !== null ?dept[department]: null}</td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
