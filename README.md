@@ -1,6 +1,14 @@
 # 🧾 Exam Bill Management System
 
 A web-based application built to automate the generation of faculty exam bills, reducing manual effort and improving calculation accuracy.
+---
+
+
+
+## 📺 Demo Video
+
+[![Watch the demo on YouTube](https://img.youtube.com/vi/fDTmPBCZiv0/0.jpg)](https://youtu.be/fDTmPBCZiv0?si=bmxcHLCzeziilNni0)
+
 
 ---
 ## 🌐 Frontend – React
