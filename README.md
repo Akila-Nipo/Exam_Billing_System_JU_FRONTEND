@@ -83,7 +83,52 @@ Exam_Billing_System_JU_FRONTEND/
 A full-stack web application to automate the generation and management of faculty exam bills at Jahangirnagar University.
 
 ---
+  ## 🌐 Frontend – React
 
+### 📁 Folder Structure 
+
+```
+Exam_Billing_System_JU_FRONTEND/
+├── public/
+├── src/
+├── .gitignore
+├── README.md
+├── package.json
+├── package-lock.json
+
+```
+### 🧰 Prerequisites
+
+- Node.js (v16 or higher recommended)
+- npm or yarn
+
+### 🚀 Local Installation Steps
+
+
+# 1. Clone the repository
+```
+git clone https://github.com/Akila-Nipo/Exam_Billing_System_JU_FRONTEND.git
+cd Exam_Billing_System_JU_FRONTEND
+```
+
+# 2. Install dependencies
+```
+npm install
+```
+
+# 3. Run the React development server
+```
+npm start
+```
+
+### ✅ Access
+
+- **Frontend**: [http://localhost:3000](http://localhost:3000)
+
+> ⚠️ Make sure the Django backend is also running at [http://127.0.0.1:8000](http://127.0.0.1:8000) so that API calls work properly.
+
+
+---
 ## 📦 Backend – Django (MVC)
 
 ### 📁 Folder Structure 
@@ -146,49 +191,6 @@ python manage.py runserver
 - **App**: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 - **Admin panel**: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
-  ## 🌐 Frontend – React
-
-### 📁 Folder Structure 
-
-```
-Exam_Billing_System_JU_FRONTEND/
-├── public/
-├── src/
-├── .gitignore
-├── README.md
-├── package.json
-├── package-lock.json
-
-```
-### 🧰 Prerequisites
-
-- Node.js (v16 or higher recommended)
-- npm or yarn
-
-### 🚀 Local Installation Steps
-
-
-# 1. Clone the repository
-```
-git clone https://github.com/Akila-Nipo/Exam_Billing_System_JU_FRONTEND.git
-cd Exam_Billing_System_JU_FRONTEND
-```
-
-# 2. Install dependencies
-```
-npm install
-```
-
-# 3. Run the React development server
-```
-npm start
-```
-
-### ✅ Access
-
-- **Frontend**: [http://localhost:3000](http://localhost:3000)
-
-> ⚠️ Make sure the Django backend is also running at [http://127.0.0.1:8000](http://127.0.0.1:8000) so that API calls work properly.
 
 ## 🛠 Technologies Used
 
